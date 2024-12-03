@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            box-sizing: border-box;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            position: absolute;
+        }
+        .snake{
+            position: absolute;
+            border: 1px solid black;
+            height: 10vh;
+            width: 10vh;
+            background-color: gold;
+        }
+        .food{
+            background-color: firebrick;
+            height: 5vh;
+            width: 5vh;
+            position: absolute;
+        }
+    </style>
+</head>
+<body  onkeydown="moveObject(event)">
+    <div class="container">
+        <div class="snake"></div>
+        <div class="food"></div>
+
+    </div>
+    <script>
+        let snake = document.querySelector(".snake");
+        let currentLeft = 0;
+        let currentTop = 0;
+        let iLeft = 0;
+        let itop = 0;
+
+        function clearAllInterval(){
+			clearInterval(iLeft);
+			clearInterval(itop);
+		}
+        
+        function moveObject(e){
+            if(e.key == "w"){
+                up();
+            }
+            else if(e.key == "s"){
+                down();
+            }
+            else if(e.key == "a"){
+                left();
+            }
+            else if(e.key == "d"){
+                right();
+            }
+        }
+        function up(){
+            clearAllInterval();
+			itop = setInterval(u,5);
+        }
+        function down(){
+            clearAllInterval();
+            itop = setInterval(d,5);
+        }
+        function left(){
+            clearAllInterval();
+            iLeft = setInterval(l,5);
+        }
+        function right(){
+            clearAllInterval();
+            iLeft = setInterval(r,5);
+        }
+
+        function l(){
+            let snak = document.querySelector(".snake");
+            currentLeft--;
+            snak.style.left = currentLeft+"px";
+        }
+        function r(){
+            let snak = document.querySelector(".snake");
+            currentLeft++;
+            snak.style.left = currentLeft+"px";
+        }
+        function u(){
+            let snak = document.querySelector(".snake");
+            currentTop--;
+            snak.style.top = currentTop+"px";
+        }
+        function d(){
+            let snak = document.querySelector(".snake");
+            currentTop++;
+            snak.style.top = currentTop+"px";
+        }
+        function eat(){
+            let Height = Math.random() *100;
+            let Width = Math.random() *100;
+            let food = document.querySelector(".food");
+            food.style.top= Height+"vh";
+            food.style.left= Width+"vw";
+        }
+        eat();
+    </script>
+</body>
+</html>

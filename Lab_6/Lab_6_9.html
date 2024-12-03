@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onkeydown="Keypress(event)" onkeyup="changeBack()">
+    <div class="container"></div>
+    <script>
+        let container = document.querySelector(".container"); 
+        function Keypress(e){
+			if(e.key=="a"){
+				container.innerHTML = "Vowel(a) is pressed."
+			}else if(e.key=="e"){
+				container.innerHTML = "Vowel(e) is pressed."
+			}
+			else if(e.key=="i"){
+                container.innerHTML = "Vowel(i) is pressed."	
+			}
+			else if(e.key=="o"){
+				container.innerHTML = "Vowel(o) is pressed."
+			}
+            else if(e.key=="u"){
+				container.innerHTML = "Vowel(u) is pressed."
+			}
+            else{
+                container.innerHTML = "consonant is pressed."
+            }
+		}
+        function changeBack(){
+            document.body.style.backgroundColor = "blue";
+        }
+    </script>
+</body>
+</html>

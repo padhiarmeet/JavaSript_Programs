@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>G_C_D</h1>
+    <script>
+        n1 = prompt("Enter a nummber...");
+        n2 = prompt("Enter second number...");
+        let count = 0;
+        let temp
+
+        if (n1 > n2) {
+            temp = n2;
+        }
+        else {
+            temp = n1;
+        }
+
+        for (i = 2; i < temp; i++) {
+            
+            if (temp % i == 0 && temp % i == 0) {
+
+                count = i;
+
+            }
+        }
+        document.write(count);
+
+    </script>
+</body>
+
+</html>

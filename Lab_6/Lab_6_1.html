@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click this</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+        <button id="btn" onclick="cl()">Click me...!</button>
+
+    <script>
+        btn = document.getElementById(btn).addEventListener("click", ()=>{
+            
+        })
+        function cl(){
+            let count = 0;
+            if(count == 0){
+                count = 1;
+                r = parseInt(Math.random()*255);
+                g = parseInt(Math.random()*255);
+                b = parseInt(Math.random()*255);
+                document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+                console.log("Hello")
+                setInterval(500);
+                
+            }
+            else{
+                count = 0;
+                clearInterval();
+            }
+        }
+        function sl(){
+            setInterval(cl,1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            height: 30vh;
+            width: 30vh;
+            border: 1px solid black;
+        }
+        #two{
+            height: 10vh;
+            width: 30vh;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">111</div>
+    <div id="two">Do something with me....!</div>
+    <script>
+
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+
+        one.addEventListener('dblclick', ()=>{
+            two.innerHTML='mouse double click thyu bhai....';
+        });
+        one.addEventListener('mousedown', ()=>{
+            two.innerHTML='mouse down thyu bhai....';
+        });
+        one.addEventListener('mouseup', ()=>{
+            two.innerHTML='mouse down thyu bhai....';
+        });
+        one.addEventListener('mouseover', ()=>{
+            two.innerHTML='mouse over thyu bhai....';
+        });
+        one.addEventListener('mouseout', ()=>{
+            two.innerHTML='mouse out thyu bhai....';
+        });
+    </script>
+</body>
+</html>

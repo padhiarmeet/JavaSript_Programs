@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD operations</title>
+    <style>
+        #container {
+            margin-top: 10vh;
+            margin-left: 40vw;
+        }
+        table {
+            width: 30vw;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h3>CRUD Operations</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="number" id="number" placeholder="Mobile Number">
+    <button id="hel" onclick="addDetails()">Add</button>
+    <div id="container"></div>
+    <script>
+        let e = 0;
+        let index1 = 0;
+        let data = [
+            { name: 'abc', mobile_no: 98765434567 },
+            { name: 'def', mobile_no: 345434547 },
+            { name: 'ghi', mobile_no: 478954865 },
+            { name: 'jkl', mobile_no: 2345678432 }
+        ];
+
+        function addDetails() {
+            
+            if(e==0){
+                let name = document.getElementById("name").value;
+                let number = document.getElementById("number").value;
+                if (name && number) {
+                data.push({ name: name, mobile_no: number });
+                display();
+                document.getElementById("name").value = "";
+                document.getElementById("number").value = "";
+            } else {
+                alert("Please enter both Name and Mobile Number");
+            }
+            }
+            else{
+                data[index1].name = document.getElementById('name').value;
+                data[index1].mobile_no = document.getElementById('number').value;
+                document.getElementById("hel").innerHTML="Add";
+                display();
+
+                document.getElementById('name').value = null
+                document.getElementById('number').value = null  ;
+            }
+        }
+
+        function deleteRow(index) {
+            data.splice(index, 1);
+            display();
+        }
+
+        function edit(i){
+            document.getElementById("name").value = data[i].name;
+            document.getElementById("number").value = data[i].mobile_no;
+            e=1;
+            index1 = i;
+            document.getElementById("hel").innerHTML="EDIT";
+        }
+
+        function display() {
+            let container = document.getElementById("container");
+            let html = '<table>';
+            html += '<tr><th>Name</th><th>Mobile Number</th><th>Action</th><th>edit</th></tr>';
+            
+            for (let i = 0; i < data.length; i++) {
+                html += '<tr>';
+                html += '<td>' + data[i].name + '</td>';
+                html += '<td>' + data[i].mobile_no + '</td>';
+                html += '<td><button onclick="deleteRow(' + i + ')">Delete</button></td>';
+                html += '<td><button onclick="edit(' + i + ')">Edit</button></td>';
+                html += '</tr>';
+            }
+            
+            html += '</table>';
+            container.innerHTML = html;
+        }
+
+        display();
+    </script>
+</body>
+</html>

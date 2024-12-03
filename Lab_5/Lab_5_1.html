@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.main{
+    height: 99vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    border: 1px solid black;
+    height: 75vh;
+    width: 29vw;
+}
+#tab{
+    width: 29vw;
+    height: 75vh;
+    border-radius: 3px;
+}
+#main_box{
+    width: 97%;
+    height: 95%;
+    border: 0px;
+}
+.btn{
+    height: 100%;
+    width: 100%;
+    border: 0px;
+}
+</style>
+<body>
+    <div class="main">
+        <div class="container">
+            <table border="0" id="tab">
+                <tr>
+                    <td colspan="4"><input type="text" id="main_box"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="7" onclick="display('7')"></td>
+                    <td><input type="button" class="btn" value="8" onclick="display('8')"></td>
+                    <td><input type="button" class="btn" value="9" onclick="display('9')"></td>
+                    <td><input type="button" class="btn" value="+" onclick="display('+')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="4" onclick="display('4')"></td>
+                    <td><input type="button" class="btn" value="5" onclick="display('5')"></td>
+                    <td><input type="button" class="btn" value="6" onclick="display('6')"></td>
+                    <td><input type="button" class="btn" value="-" onclick="display('-')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="1" onclick="display('1')"></td>
+                    <td><input type="button" class="btn" value="2" onclick="display('2')"></td>
+                    <td><input type="button" class="btn" value="3" onclick="display('3')"></td>
+                    <td><input type="button" class="btn" value="*" onclick="display('*')"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="C" onclick="Lclear()"></td>
+                    <td><input type="button" class="btn" id="btn_cl" value="0" onclick="display('0')"></td>
+                    <td><input type="button" class="btn" value="=" onclick="calcualte()"></td>
+                    <td><input type="button" class="btn" value="/" onclick="display('/')"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        text = document.getElementById("main_box");
+        cl_btn = document.getElementById("btn_cl");
+        function display(n){
+             text.value += n;   
+        }
+        function Lclear(){
+            text.value = " ";
+        }
+        function calcualte(){
+            final = eval(text.value)
+            text.value = final;
+        }
+    </script>
+</body>
+</html>

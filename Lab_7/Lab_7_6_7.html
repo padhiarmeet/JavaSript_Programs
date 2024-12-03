@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con{
+            height: 20vh;
+            width: 20vh;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="con"></div>
+    <script>
+        let a = [1,2,3,4,5,6,7];
+        let c= [1,2,3,4]
+        let [p,q]=c
+        console.log(p);
+        console.log(q);
+
+        let m = {
+            name :'meet',
+            age : 18
+        }
+        let {name,age} = m;
+        console.log(m);
+        console.log(name);
+        console.log(age);
+        document.querySelector(".con").addEventListener("click" ,() =>{
+        console.log("HEllo! from hello function.");
+        });
+    </script>
+</body>
+</html>

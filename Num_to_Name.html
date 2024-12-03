@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Number to name</h3>
+    <script>
+        let n = prompt("Enter a number = ");
+
+        let a1 = ['one','two','three','four','five','six','seven','eight','nine'];
+        let a3 = ['ten','twenty','thirty','fourty','fifty','sixty','seventy','eighty','ninty'];
+        let a2 = ['eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','ninteen'];
+
+        if(n<10){
+            document.write(a1[i]);
+        }
+        else if(n<20){
+            document.write(a2[n%10-1]);
+        }
+        else if(n<100){
+            if(n%10 == 0){
+                n/=10;
+                document.write(a3[n-1]);
+            }
+            else{
+                let a = n;
+                n = parseInt(n/10);
+                document.write(a2[n-1+ " "+a1[a%10-1]])
+            }
+        }
+        else if(n>100){
+            if(n % 100 == 0){
+                n/=100;
+                document.write(a1[n-1]+' '+'hundred');
+            }
+            else if(n%10==0){
+                a = n;
+                n = parseInt(n/100);
+                a = parseInt(n%100);
+                document.write(a1[n-1]+' '+'hundred'+' '+a1[(a%10)-1]);   
+            }
+            else{
+                if((n%100)<10){
+                    a = n;
+                    n = parseInt(n/100);
+                    a = parseInt(a%100);
+                    document.write(a1[n-1] +' '+'hundred'+' '+a1[a%10-1]);
+                }
+                else if((n%100)<20){
+                    a = n;
+                    n = parseInt(n/100);
+                    a = parseInt(a%100);
+                    document.write(a1[n-1] +' '+'hundred'+' '+a2[a%10-1]);
+                }
+                else{
+                a = n;
+                b = n;
+                n = parseInt(n/100);
+                a = parseInt((a%100));
+                a = parseInt(a/10);
+                document.write(a1[n-1]+' '+'hundred'+' '+a3[a-1] + ' '+a1[b%10-1]);
+            }
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

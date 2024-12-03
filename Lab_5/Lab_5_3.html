@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            height: 30vh;
+            width: 30vh;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #two{
+            height: 10vh;
+            width: 30vh;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">111</div>
+    <div id="two">Do something with me....!</div>
+    <script>
+
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+
+        one.addEventListener('onkeydown', ()=>{
+            two.innerHTML='key down thia bhai....';
+            console.log("dfidv");
+        });
+        one.addEventListener('keyup', ()=>{
+            two.innerHTML='key up thia bhai....';
+        });
+        one.addEventListener('keypress', ()=>{
+            two.innerHTML='key press thia bhai....';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id ="btn" type="checkbox" value="hurr" onclick="m1(value)">hurr
+    <input id ="btn" type="checkbox" value="furr" onclick="m1(value)">furr
+    <input id ="btn" type="checkbox" value="okurr" onclick="m1(value)">okurr
+    <div class="container"></div>
+
+    <script>
+      function m1(v){
+        m = [ ];
+        m += v;
+        document.querySelector(".container").innerHTML += ","+m;
+      }
+    </script>
+</body>
+</html>

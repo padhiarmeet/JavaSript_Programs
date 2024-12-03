@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab_7</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+    <script>
+        function print(some){
+            document.querySelector(".container").innerHTML = some;
+        }
+        function calc(num1,num2,myCallback){
+            let sum = num1 + num2;
+            myCallback(sum);
+        }
+        calc(5,5,print);
+    </script>
+</body>
+</html>

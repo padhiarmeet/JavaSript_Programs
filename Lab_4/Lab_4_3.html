@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<body>
+    <h3 align="center">DISPLAY STUDENT</h3>
+    <div class="row">
+    <script>
+        student =[
+            {
+                picture : 'https://picsum.photos/300',
+                name: "meet",
+                batch : 2,
+                id_no : 1234,
+                mobial_no : 1234567890,
+                age : 21
+            },
+            {
+                picture : 'https://picsum.photos/300',
+                name: "xya",
+                batch : 1,
+                id_no : 9234,
+                mobial_no : 987567890,
+                age : 99
+            },
+            {
+                picture : 'https://picsum.photos/300',
+                name: "opa",
+                batch : 5,
+                id_no : 5674,
+                mobial_no : 1897969690,
+                age : 1
+            },
+
+        ] 
+        for(i=0;i<3;i++){
+            document.write('<div class="card" style="width: 12rem;margin:20px;">');
+            document.write('<img src="'+student[i].picture+'" class="card-img-top" alt="..."/>');
+            document.write('<div class="card-body">');
+            document.write('<h5 class="card-title">'+student[i].name+'</h5>');
+            document.write('<p class="card-text">'+student[i].batch +'</p>');
+            document.write('<p class="card-text">'+student[i].id_no +'</p>');
+            document.write('<p class="card-text">'+student[i].mobial_no +'</p>');
+            document.write('<p class="card-text">'+student[i].age +'</p>');
+            document.write('<a href="https://picsum.photos/300" class="btn btn-primary">Go somewhere</a>');
+            document.write('</div></div>');
+        }
+
+
+    </script>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
+    
+</body>
+</html>
